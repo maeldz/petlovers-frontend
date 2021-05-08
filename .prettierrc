@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
   "trailingComa": "all",
-  "allowParens": "avoid"
+  "allowParens": "avoid",
+  "semi": false
 }
