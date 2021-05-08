@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
             no botão abaixo!
           </span>
           <div>
-            <button type="button" onClick={() => push('signin')}>
+            <button type="button" onClick={() => push('login')}>
               Procurar doguineos
             </button>
           </div>
