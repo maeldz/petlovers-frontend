@@ -12,7 +12,7 @@ export const Content = styled.div`
   height: calc(100% - 73px);
   padding: 115px 90px 0;
 
-  section {
+  form {
     display: flex;
     flex-direction: column;
     max-width: 395px;

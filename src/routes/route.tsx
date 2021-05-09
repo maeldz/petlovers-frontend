@@ -4,6 +4,7 @@ import {
   RouteComponentProps,
   RouteProps,
 } from 'react-router-dom'
+import { useAuth } from '../contexts/auth'
 
 interface Props extends RouteProps {
   component: React.FC<RouteComponentProps>
@@ -15,7 +16,7 @@ const RouteWrapper: React.FC<Props> = ({
   isPrivate,
   ...rest
 }) => {
-  const signed = false
+  const { signed } = useAuth()
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />
