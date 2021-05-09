@@ -44,6 +44,11 @@ export const Content = styled.div`
         font-size: 22px;
         background: #fff;
         color: #c48c07;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #f2f2f2;
+        }
       }
     }
   }
