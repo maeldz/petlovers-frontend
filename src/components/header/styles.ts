@@ -5,12 +5,33 @@ export const Container = styled.div`
   flex: 1;
   background: #f2ac05;
   height: 73px;
-  padding: 0 40px 0 60px;
+  padding: 0 50px;
   align-items: center;
-  justify-content: space-between;
+
+  section {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 25px;
+      width: 35px;
+      margin-right: 40px;
+      background: none;
+
+      div {
+        background: #fff;
+        height: 3px;
+        width: 100%;
+      }
+    }
+  }
 
   aside {
     display: flex;
+    margin-left: auto;
     flex-direction: row;
 
     a {
