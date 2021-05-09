@@ -14,8 +14,15 @@ export const Container = styled.div`
     flex-direction: row;
 
     a {
-      font-size: 21px;
-      color: #fff;
+      span {
+        font-size: 21px;
+        color: #fff;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #f2f2f2;
+        }
+      }
 
       &:first-child {
         margin-right: 35px;

@@ -8,8 +8,12 @@ export const Header: React.FC = () => {
     <Container>
       <Logo />
       <aside>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Cadastre-se</Link>
+        <Link to="/login">
+          <span>Login</span>
+        </Link>
+        <Link to="/signup">
+          <span>Cadastre-se</span>
+        </Link>
       </aside>
     </Container>
   )
