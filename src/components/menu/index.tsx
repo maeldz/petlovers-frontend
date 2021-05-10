@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../contexts/auth'
 import { Container, MenuContainer, Avatar } from './styles'
 
 type Props = {
@@ -8,6 +9,8 @@ type Props = {
 }
 
 export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
+  const { signOut } = useAuth()
+
   return (
     <Container>
       <MenuContainer expanded={menuExpanded}>
@@ -23,7 +26,7 @@ export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Procurar pets</Link>
+              <Link to="/search">Procurar pets</Link>
             </li>
             <li>
               <Link to="/">Cadastrar pets</Link>
@@ -35,7 +38,9 @@ export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
               <Link to="/">Configurações</Link>
             </li>
             <li>
-              <Link to="/">Sair</Link>
+              <button type="button" onClick={() => signOut()}>
+                Sair
+              </button>
             </li>
           </ul>
         </nav>

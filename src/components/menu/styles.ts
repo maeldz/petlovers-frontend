@@ -32,10 +32,12 @@ export const MenuContainer = styled.div<Props>`
       li {
         margin-bottom: 23px;
 
-        a {
+        a,
+        button {
           font-size: 23px;
           font-weight: 400;
           color: #fff;
+          background: none;
         }
       }
     }
