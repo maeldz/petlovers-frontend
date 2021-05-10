@@ -1,5 +1,6 @@
 import React, { FormEventHandler, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { Container, Content } from './styles'
 import api from '../../services/api'
 import { signupValidator } from '../../validators'
@@ -12,13 +13,23 @@ export const Signup: React.FC = () => {
   const { goBack, push } = useHistory()
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault()
-    const data = { name, email, password, passwordConfirmation }
-    const isValid = await signupValidator(data)
-    if (isValid) {
-      const response = await api.post('users', data)
-      if (response.status === 200) {
+    try {
+      e.preventDefault()
+      const data = { name, email, password, passwordConfirmation }
+      const isValid = await signupValidator(data)
+      if (isValid) {
+        await api.post('users', data)
+        toast.success('Conta criada com sucesso!')
         push('login')
+      } else {
+        toast.error('Falha no cadastro, verifique seus dados!')
+      }
+    } catch (error) {
+      const { status } = error.response
+      if (status === 400) {
+        toast.error('Falha no cadastro, email ja registrado!')
+      } else {
+        toast.error('Falha no servidor, tente novamente mais tarde!')
       }
     }
   }
