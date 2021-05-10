@@ -31,6 +31,8 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState(initialUser)
   const [token, setToken] = useState('')
 
+  api.defaults.headers.Authorization = `Bearer ${token}`
+
   const signIn = async (email: string, password: string): Promise<void> => {
     try {
       const response = await api.post<LoginResponse>('sessions', {
