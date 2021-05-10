@@ -7,6 +7,7 @@ type Props = {
 export const Container = styled.div`
   div.overlay {
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 0;
     width: 100%;
