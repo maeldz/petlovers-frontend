@@ -17,7 +17,7 @@ export const Content = styled.div`
   justify-content: center;
   background: #f2ac05;
 
-  section {
+  form {
     display: flex;
     flex: 1;
     flex-direction: column;
