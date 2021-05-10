@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Logo, Menu } from '..'
+import { useAuth } from '../../contexts/auth'
 import { Container } from './styles'
 
 type Props = {
@@ -9,6 +10,8 @@ type Props = {
 
 export const Header: React.FC<Props> = ({ signed }) => {
   const [menuExpanded, setMenuExpanded] = useState(false)
+
+  const { user } = useAuth()
 
   const handleMenuExpanded = (): void => {
     setMenuExpanded(!menuExpanded)
@@ -30,14 +33,21 @@ export const Header: React.FC<Props> = ({ signed }) => {
         )}
         <Logo />
       </section>
-      <aside>
-        <Link to="/login">
-          <span>Login</span>
-        </Link>
-        <Link to="/signup">
-          <span>Cadastre-se</span>
-        </Link>
-      </aside>
+      {signed ? (
+        <div className="avatar-container">
+          <span>{user.name}</span>
+          <img src={user?.avatar?.url} alt={user.name} />
+        </div>
+      ) : (
+        <div className="auth-container">
+          <Link to="/login">
+            <span>Login</span>
+          </Link>
+          <Link to="/signup">
+            <span>Cadastre-se</span>
+          </Link>
+        </div>
+      )}
     </Container>
   )
 }

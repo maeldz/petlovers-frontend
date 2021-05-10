@@ -29,7 +29,26 @@ export const Container = styled.div`
     }
   }
 
-  aside {
+  div.avatar-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+
+    span {
+      color: #fff;
+      margin-right: 13px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+  }
+
+  div.auth-container {
     display: flex;
     margin-left: auto;
     flex-direction: row;
