@@ -37,6 +37,7 @@ export const Container = styled.div`
     }
 
     span.breed {
+      text-transform: capitalize;
       font-size: 18px;
       color: #6f6f6f;
     }

@@ -36,6 +36,7 @@ export const Container = styled.div`
 
     span {
       color: #fff;
+      text-transform: capitalize;
       margin-right: 13px;
       font-size: 22px;
       font-weight: 500;

@@ -54,6 +54,7 @@ export const Content = styled.div`
         background-position-x: 100%;
         background-position-y: 5px;
         margin-bottom: 24px;
+        cursor: pointer;
       }
 
       label {

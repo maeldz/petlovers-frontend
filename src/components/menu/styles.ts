@@ -67,6 +67,7 @@ export const Avatar = styled.div`
 
   strong {
     color: #fff;
+    text-transform: capitalize;
     font-size: 23px;
     animation: width 0.2s;
     font-weight: 800;

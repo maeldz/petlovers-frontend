@@ -1,5 +1,4 @@
 import React, { useState, FormEventHandler } from 'react'
-import { useHistory } from 'react-router-dom'
 import { Header, Result } from '../../components'
 import api from '../../services/api'
 import { Container, Content } from './styles'
@@ -9,7 +8,6 @@ export const Search: React.FC = () => {
   const [dewormed, setDewormed] = useState(false)
   const [neutered, setNeutered] = useState(false)
   const [searchResult, setSearchResult] = useState([])
-  const { push } = useHistory()
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
