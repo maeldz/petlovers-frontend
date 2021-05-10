@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import api from '../services/api'
 
 type User = {
@@ -30,17 +31,28 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [token, setToken] = useState('')
 
   const signIn = async (email: string, password: string): Promise<void> => {
-    const response = await api.post<LoginResponse>('sessions', {
-      email,
-      password,
-    })
-    if (response.data) {
-      const { user: userData, token: userToken } = response.data
-      localStorage.setItem('@petlovers:user', JSON.stringify(userData))
-      localStorage.setItem('@petlovers:token', userToken)
-      api.defaults.headers.Authorization = `Bearer ${userToken}`
-      setUser(userData)
-      setToken(userToken)
+    try {
+      const response = await api.post<LoginResponse>('sessions', {
+        email,
+        password,
+      })
+      if (response.data) {
+        const { user: userData, token: userToken } = response.data
+        localStorage.setItem('@petlovers:user', JSON.stringify(userData))
+        localStorage.setItem('@petlovers:token', userToken)
+        api.defaults.headers.Authorization = `Bearer ${userToken}`
+        setUser(userData)
+        setToken(userToken)
+      } else {
+        toast.error('Email ou senha inválidos, tente novamente!')
+      }
+    } catch (error) {
+      const { status } = error.response
+      if (status === 401) {
+        toast.error('Email ou senha inválidos, tente novamente!')
+      } else {
+        toast.error('Falha no servidor, tente novamente mais tarde!')
+      }
     }
   }
 
