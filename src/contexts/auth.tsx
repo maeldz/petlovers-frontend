@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import api from '../services/api'
+import defaultAvatar from '../assets/images/default-avatar.jpg'
 
 type User = {
   id: number
   name: string
   email: string
-  avatar: string
+  avatar: any
 }
 
 type LoginResponse = {
@@ -41,7 +42,10 @@ export const AuthProvider: React.FC = ({ children }) => {
         localStorage.setItem('@petlovers:user', JSON.stringify(userData))
         localStorage.setItem('@petlovers:token', userToken)
         api.defaults.headers.Authorization = `Bearer ${userToken}`
-        setUser(userData)
+        setUser({
+          ...userData,
+          avatar: !userData.avatar ? { url: defaultAvatar } : userData.avatar,
+        })
         setToken(userToken)
       } else {
         toast.error('Email ou senha inválidos, tente novamente!')

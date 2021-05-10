@@ -9,19 +9,16 @@ type Props = {
 }
 
 export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
-  const { signOut } = useAuth()
+  const { signOut, user } = useAuth()
 
   return (
     <Container>
       <MenuContainer expanded={menuExpanded}>
         <Avatar>
           <div>
-            <img
-              src="https://ui-avatars.com/api/?name=John+Doe"
-              alt="Carlos Eduardo"
-            />
+            <img src={user?.avatar?.url} alt={user.name} />
           </div>
-          <strong>Carlos Eduardo</strong>
+          <strong>{user.name}</strong>
         </Avatar>
         <nav>
           <ul>
