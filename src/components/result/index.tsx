@@ -1,4 +1,7 @@
-import React from 'react'
+/* eslint-disable import/no-duplicates */
+import React, { useMemo } from 'react'
+import { parseISO, intervalToDuration, formatDuration } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 import { Container } from './styles'
 
 type Props = {
@@ -6,6 +9,16 @@ type Props = {
 }
 
 export const Result: React.FC<Props> = ({ data }) => {
+  const age = useMemo(() => {
+    const interval = intervalToDuration({
+      start: parseISO(data.birthday),
+      end: new Date(),
+    })
+    return formatDuration(
+      { years: interval.years, months: interval.months },
+      { locale: ptBR, delimiter: ' e ' }
+    )
+  }, [data.birthday])
   return (
     <Container>
       <div>
@@ -14,7 +27,7 @@ export const Result: React.FC<Props> = ({ data }) => {
       </div>
       <div>
         <span className="breed">{data.breed}</span>
-        <span className="age">6 meses</span>
+        <span className="age">{age}</span>
         {data.dewormed && <span className="dewormed">Vermifugado</span>}
         {data.neutered && <span className="neutered">Castrado</span>}
       </div>
