@@ -13,7 +13,7 @@ export const Content = styled.div`
     div.grid {
       display: grid;
       flex: 1;
-      grid-template-columns: 285px repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-gap: 63px;
     }
   }
