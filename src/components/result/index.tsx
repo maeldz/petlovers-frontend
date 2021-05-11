@@ -14,11 +14,13 @@ export const Result: React.FC<Props> = ({ data }) => {
       start: parseISO(data.birthday),
       end: new Date(),
     })
-    return formatDuration(
+    const date = formatDuration(
       { years: interval.years, months: interval.months },
       { locale: ptBR, delimiter: ' e ' }
     )
+    return !date ? 'Menos de um mês' : date
   }, [data.birthday])
+
   return (
     <Container>
       <div>
