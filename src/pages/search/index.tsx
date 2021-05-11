@@ -33,18 +33,18 @@ export const Search: React.FC = () => {
               <option value="">Raça</option>
               <option value="basset">Basset</option>
               <option value="buldogue">Buldogue</option>
-              <option value="golden-retriever">Golden Retriever</option>
+              <option value="golden retriever">Golden Retriever</option>
               <option value="labrador">Labrador</option>
-              <option value="lhasa-apso">Lhasa Apso</option>
+              <option value="lhasa apso">Lhasa Apso</option>
               <option value="maltes">Maltês</option>
-              <option value="pastor-alemão">Pastor-Alemão</option>
+              <option value="pastor alemão">Pastor-Alemão</option>
               <option value="pinscher">Pinscher</option>
               <option value="poodle">Poodle</option>
               <option value="pug">Pug</option>
               <option value="rottweiler">Rottweiler</option>
               <option value="schnauzer">Schnauzer</option>
-              <option value="shih-tzu">Shih Tzu</option>
-              <option value="spitz-alemão">Spitz Alemão</option>
+              <option value="shih tzu">Shih Tzu</option>
+              <option value="spitz alemão">Spitz Alemão</option>
             </select>
             <label>
               Vermifugado
