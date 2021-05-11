@@ -1,19 +1,25 @@
 import { toast } from 'react-toastify'
 import React, { useState, ChangeEvent } from 'react'
 import api from '../../services/api'
-import { Container, ImagePreview } from './styles'
-import imagePlaceholder from '../../assets/images/image-placeholder.png'
+
+type InputProps = {
+  preview: string
+  isClear: boolean
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
+}
 
 type Props = {
   setFile: React.Dispatch<React.SetStateAction<string>>
   isClear: boolean
   setIsClear: React.Dispatch<React.SetStateAction<boolean>>
+  input: React.FC<InputProps>
 }
 
 export const ImageSelector: React.FC<Props> = ({
   setFile,
   isClear,
   setIsClear,
+  input: Component,
 }) => {
   const [preview, setPreview] = useState('')
 
@@ -37,22 +43,10 @@ export const ImageSelector: React.FC<Props> = ({
   }
 
   return (
-    <Container>
-      <label htmlFor="image">
-        <ImagePreview preview={isClear ? '' : preview}>
-          {isClear && (
-            <div>
-              <img src={imagePlaceholder} alt="" />
-            </div>
-          )}
-        </ImagePreview>
-        <input
-          type="file"
-          id="image"
-          accept="image/*"
-          onChange={handleChange}
-        />
-      </label>
-    </Container>
+    <Component
+      preview={preview}
+      isClear={isClear}
+      handleChange={handleChange}
+    />
   )
 }

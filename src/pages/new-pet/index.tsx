@@ -1,6 +1,11 @@
 import React, { useState, FormEventHandler, useRef } from 'react'
 import { toast } from 'react-toastify'
-import { DatePicker, Header, ImageSelector } from '../../components'
+import {
+  DatePicker,
+  Header,
+  ImageSelector,
+  PetImageInput,
+} from '../../components'
 import api from '../../services/api'
 import { Container, Content } from './styles'
 import { newPetValidator } from '../../validators'
@@ -59,6 +64,7 @@ export const NewPet: React.FC = () => {
               setFile={setFile}
               isClear={isClear}
               setIsClear={setIsClear}
+              input={PetImageInput}
             />
             <input
               type="text"
