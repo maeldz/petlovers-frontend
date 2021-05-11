@@ -26,7 +26,7 @@ export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
               <Link to="/search">Procurar pets</Link>
             </li>
             <li>
-              <Link to="/">Cadastrar pets</Link>
+              <Link to="/new-pet">Cadastrar pets</Link>
             </li>
             <li>
               <Link to="/my-pets">Meus pets</Link>
