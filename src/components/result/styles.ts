@@ -19,6 +19,7 @@ export const Container = styled.div`
 
     strong {
       position: absolute;
+      text-transform: capitalize;
       bottom: 10px;
       left: 14px;
       font-size: 26px;
