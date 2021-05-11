@@ -36,7 +36,9 @@ export const Header: React.FC<Props> = ({ signed }) => {
       {signed ? (
         <div className="avatar-container">
           <span>{user.name}</span>
-          <img src={user?.avatar?.url} alt={user.name} />
+          <Link to="/profile">
+            <img src={user?.avatar?.url} alt={user.name} />
+          </Link>
         </div>
       ) : (
         <div className="auth-container">
