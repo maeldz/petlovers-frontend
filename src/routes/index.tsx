@@ -1,5 +1,5 @@
 import { Switch } from 'react-router-dom'
-import { Home, Login, Signup, Search, MyPets, NewPet } from '../pages'
+import { Home, Login, Signup, Search, MyPets, NewPet, Profile } from '../pages'
 import Route from './route'
 
 const Routes: React.FC = () => {
@@ -11,6 +11,7 @@ const Routes: React.FC = () => {
       <Route path="/search" isPrivate component={Search} />
       <Route path="/my-pets" isPrivate component={MyPets} />
       <Route path="/new-pet" isPrivate component={NewPet} />
+      <Route path="/profile" isPrivate component={Profile} />
     </Switch>
   )
 }

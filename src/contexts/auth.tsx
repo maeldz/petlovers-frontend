@@ -19,6 +19,7 @@ interface AuthContextData {
   signed: boolean
   signIn(email: string, password: string): Promise<void>
   signOut(): Promise<void>
+  updateProfile(data: Omit<User, 'id'>): Promise<void>
   user: User
   token: string
 }
@@ -82,9 +83,38 @@ export const AuthProvider: React.FC = ({ children }) => {
     loadStorageData()
   }, [])
 
+  const updateProfile = async (data: Omit<User, 'id'>): Promise<void> => {
+    localStorage.setItem('@petlovers:user', JSON.stringify(data))
+    setUser({
+      ...data,
+      id: user.id,
+    })
+  }
+
+  useEffect(() => {
+    async function loadStorageData(): Promise<void> {
+      const storagedUser = localStorage.getItem('@petlovers:user')
+      const storagedToken = localStorage.getItem('@petlovers:token') || ''
+
+      if (storagedUser) {
+        setUser(JSON.parse(storagedUser))
+        setToken(storagedToken)
+      }
+    }
+
+    loadStorageData()
+  }, [])
+
   return (
     <AuthContext.Provider
-      value={{ signed: !!user?.name, user, token, signIn, signOut }}
+      value={{
+        signed: !!user?.name,
+        user,
+        token,
+        signIn,
+        signOut,
+        updateProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>

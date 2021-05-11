@@ -32,7 +32,7 @@ export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
               <Link to="/my-pets">Meus pets</Link>
             </li>
             <li>
-              <Link to="/">Configurações</Link>
+              <Link to="/profile">Configurações</Link>
             </li>
             <li>
               <button type="button" onClick={() => signOut()}>
