@@ -9,7 +9,7 @@ export const Result: React.FC<Props> = ({ data }) => {
   return (
     <Container>
       <div>
-        <img src={data.image.url} alt={data.name} />
+        <img src={data.image?.url} alt={data.name} />
         <strong>{data.name}</strong>
       </div>
       <div>

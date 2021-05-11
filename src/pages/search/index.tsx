@@ -1,4 +1,5 @@
 import React, { useState, FormEventHandler } from 'react'
+import { toast } from 'react-toastify'
 import { Header, Result } from '../../components'
 import api from '../../services/api'
 import { Container, Content } from './styles'
@@ -11,15 +12,19 @@ export const Search: React.FC = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
-    const response = await api.get('dogs', {
-      params: {
-        breed,
-        dewormed,
-        neutered,
-      },
-    })
+    if (breed !== '') {
+      const response = await api.get('dogs', {
+        params: {
+          breed,
+          dewormed,
+          neutered,
+        },
+      })
 
-    setSearchResult(response.data)
+      setSearchResult(response.data)
+    } else {
+      toast.error('Escolha a raça do cachorro!')
+    }
   }
 
   return (
