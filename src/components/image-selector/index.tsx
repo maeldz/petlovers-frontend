@@ -5,6 +5,7 @@ import api from '../../services/api'
 type InputProps = {
   preview: string
   isClear: boolean
+  defaultImage?: string
   handleChange: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 }
 
@@ -12,6 +13,7 @@ type Props = {
   setFile: React.Dispatch<React.SetStateAction<string>>
   isClear: boolean
   setIsClear: React.Dispatch<React.SetStateAction<boolean>>
+  defaultImage?: string
   input: React.FC<InputProps>
 }
 
@@ -19,6 +21,7 @@ export const ImageSelector: React.FC<Props> = ({
   setFile,
   isClear,
   setIsClear,
+  defaultImage,
   input: Component,
 }) => {
   const [preview, setPreview] = useState('')
@@ -46,6 +49,7 @@ export const ImageSelector: React.FC<Props> = ({
     <Component
       preview={preview}
       isClear={isClear}
+      defaultImage={defaultImage}
       handleChange={handleChange}
     />
   )
