@@ -7,13 +7,18 @@ export const Container = styled.div`
   border-radius: 6px;
   box-shadow: 0px 1px 8px #00000024;
 
+  @media (max-width: 754px) {
+    height: calc(100vw - 100px);
+    width: 100%;
+  }
+
   div:first-child {
     position: relative;
-    height: 165px;
+    height: 57%;
 
     img {
-      height: 165px;
-      width: 290px;
+      height: 100%;
+      width: 100%;
       border-radius: 6px 6px 0 0;
     }
 
@@ -25,8 +30,13 @@ export const Container = styled.div`
       font-size: 26px;
       font-weight: 600;
       color: #fff;
+
+      @media (max-width: 754px) {
+        font-size: calc(100vw * 0.0025 * 30);
+      }
     }
   }
+
   div:last-child {
     display: flex;
     flex-direction: column;
@@ -35,23 +45,46 @@ export const Container = styled.div`
     span {
       color: #6f6f6f;
       margin-bottom: 5px;
+
+      @media (max-width: 1117px) {
+        margin-bottom: 4px;
+      }
+
+      @media (max-width: 935px) {
+        margin-bottom: 3px;
+      }
+
+      @media (max-width: 815px) {
+        margin-bottom: 2px;
+      }
     }
 
     span.breed {
       text-transform: capitalize;
       font-size: 18px;
-      color: #6f6f6f;
+
+      @media (max-width: 754px) {
+        font-size: calc(100vw * 0.0025 * 20);
+      }
     }
 
     span.age {
       font-size: 16px;
       font-weight: 600;
+
+      @media (max-width: 754px) {
+        font-size: calc(100vw * 0.0025 * 18);
+      }
     }
 
     span.dewormed,
     .neutered {
       font-size: 16px;
       font-weight: 500;
+
+      @media (max-width: 754px) {
+        font-size: calc(100vw * 0.0025 * 18);
+      }
     }
   }
 `

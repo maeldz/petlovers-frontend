@@ -6,7 +6,15 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 84px;
+  padding: 84px;
+
+  @media (max-width: 578px) {
+    padding: 50px;
+  }
+
+  @media (max-width: 485px) {
+    padding: 30px;
+  }
 
   form {
     display: flex;
@@ -14,9 +22,12 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 571px;
     border-radius: 6px;
-    margin-right: 63px;
     background: #fff;
     box-shadow: 0px 1px 8px #00000024;
+
+    @media (max-width: 738px) {
+      width: 100%;
+    }
 
     div.header {
       display: flex;
@@ -30,6 +41,10 @@ export const Content = styled.div`
         color: #fff;
         font-size: 22px;
         font-weight: 400;
+
+        @media (max-width: 410px) {
+          font-size: 19px;
+        }
       }
     }
 
@@ -37,6 +52,10 @@ export const Content = styled.div`
       display: flex;
       flex-direction: column;
       padding: 0 35px;
+
+      @media (max-width: 512px) {
+        padding: 0 20px;
+      }
 
       & > input {
         background: #e9e9e9;
@@ -46,12 +65,19 @@ export const Content = styled.div`
         height: 43px;
         border-radius: 6px;
         padding: 0 11px;
+
+        @media (max-width: 512px) {
+          width: 100%;
+        }
+
+        @media (max-width: 485px) {
+          margin-bottom: 8px;
+        }
       }
 
       select {
         background: #e9e9e9;
         color: #6f6f6f;
-        margin-top: 13px;
         font-size: 14px;
         appearance: none;
         width: 271px;
@@ -63,8 +89,16 @@ export const Content = styled.div`
         background-repeat: no-repeat;
         background-position-x: 100%;
         background-position-y: 10px;
-        margin-bottom: 24px;
+        margin: 13px 0 24px;
         cursor: pointer;
+
+        @media (max-width: 512px) {
+          width: 100%;
+        }
+
+        @media (max-width: 485px) {
+          margin: 8px 0 14px;
+        }
       }
 
       & > label {
@@ -78,6 +112,10 @@ export const Content = styled.div`
         user-select: none;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 485px) {
+          margin-bottom: 6px;
+        }
 
         &:hover {
           span {
@@ -130,6 +168,10 @@ export const Content = styled.div`
       display: flex;
       justify-content: center;
       margin: 38px 0 22px;
+
+      @media (max-width: 485px) {
+        margin: 18px 0 12px;
+      }
 
       button {
         width: 214px;

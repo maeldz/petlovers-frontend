@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../contexts/auth'
+import { useAuth } from '../../../contexts/auth'
 import { Container, MenuContainer, Avatar } from './styles'
 
 type Props = {
@@ -14,6 +14,14 @@ export const Menu: React.FC<Props> = ({ handleMenuExpanded, menuExpanded }) => {
   return (
     <Container>
       <MenuContainer expanded={menuExpanded}>
+        <button
+          type="button"
+          className="close-menu"
+          onClick={() => handleMenuExpanded()}
+        >
+          <div />
+          <div />
+        </button>
         <Avatar>
           <div>
             <img src={user?.avatar?.url} alt={user.name} />

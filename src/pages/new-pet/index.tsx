@@ -1,11 +1,8 @@
 import React, { useState, FormEventHandler, useRef } from 'react'
 import { toast } from 'react-toastify'
-import {
-  DatePicker,
-  Header,
-  ImageSelector,
-  PetImageInput,
-} from '../../components'
+import { Header, ImageSelector } from '../../components'
+import { DatePicker } from './date-picker'
+import { PetImageInput } from './pet-image-input'
 import api from '../../services/api'
 import { Container, Content } from './styles'
 import { newPetValidator } from '../../validators'

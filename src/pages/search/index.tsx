@@ -1,6 +1,7 @@
 import React, { useState, FormEventHandler } from 'react'
 import { toast } from 'react-toastify'
-import { Header, Result } from '../../components'
+import { Header } from '../../components'
+import { Result } from './result'
 import api from '../../services/api'
 import { Container, Content } from './styles'
 

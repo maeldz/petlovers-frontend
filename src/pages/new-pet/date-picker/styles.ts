@@ -9,7 +9,7 @@ export const Picker = styled(DatePickerBase)`
   border-radius: 6px;
   padding: 0 11px;
 
-  .react-datepicker__day--selected {
-    background: #f2ac05;
+  @media (max-width: 512px) {
+    width: 100%;
   }
 `

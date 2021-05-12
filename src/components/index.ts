@@ -1,7 +1,2 @@
 export * from './header'
-export * from './logo'
-export * from './menu'
-export * from './result'
-export * from './date-picker'
 export * from './image-selector'
-export * from './pet-image-input'

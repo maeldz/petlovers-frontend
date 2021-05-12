@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Header, Result } from '../../components'
+import { Header } from '../../components'
+import { Pet } from './pet'
 import api from '../../services/api'
 import { Container, Content } from './styles'
 
@@ -28,7 +29,7 @@ export const MyPets: React.FC = () => {
         <section>
           <div className="grid">
             {myPets.map((result: any) => (
-              <Result key={result.id} data={result} />
+              <Pet key={result.id} data={result} />
             ))}
           </div>
         </section>

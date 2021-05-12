@@ -27,6 +27,42 @@ export const MenuContainer = styled.div<Props>`
   padding: 38px 48px;
   z-index: 3;
 
+  @media (max-width: 400px) {
+    width: 100%;
+    left: ${(props) => (props.expanded ? 0 : -100)}%;
+    text-align: center;
+  }
+
+  button.close-menu {
+    display: none;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background: none;
+    top: 6px;
+    right: 10px;
+
+    @media (max-width: 400px) {
+      display: block;
+    }
+
+    div:first-child {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: #fff;
+      transform: rotate(45deg);
+    }
+
+    div:last-child {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: #fff;
+      transform: rotate(-45deg);
+    }
+  }
+
   nav {
     ul {
       li {

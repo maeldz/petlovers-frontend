@@ -4,7 +4,7 @@ import { Header, ImageSelector } from '../../components'
 import api from '../../services/api'
 import { Container, Content } from './styles'
 import { profileValidator } from '../../validators'
-import { UserAvatarInput } from '../../components/user-avatar-input'
+import { UserAvatarInput } from './user-avatar-input'
 import { useAuth } from '../../contexts/auth'
 
 export const Profile: React.FC = () => {
@@ -41,9 +41,11 @@ export const Profile: React.FC = () => {
           ...(file ? { avatar_id: Number(file) } : {}),
         })
         updateProfile({
+          ...(file
+            ? { avatar: response.data.avatar }
+            : { avatar: user.avatar }),
           name,
           email,
-          avatar: response.data.avatar,
         })
         clearForm()
         toast.success('Cadastrado atualizado com sucesso!')

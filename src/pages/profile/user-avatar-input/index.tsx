@@ -1,23 +1,30 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, useMemo } from 'react'
 import { Container, ImagePreview } from './styles'
-import imagePlaceholder from '../../assets/images/image-placeholder.png'
+import imagePlaceholder from '../../../assets/images/image-placeholder.png'
 
 type Props = {
   preview: string
   isClear: boolean
+  defaultImage?: string
   handleChange: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 }
 
-export const PetImageInput: React.FC<Props> = ({
+export const UserAvatarInput: React.FC<Props> = ({
   preview,
   isClear,
+  defaultImage,
   handleChange,
 }) => {
+  const getPreview = useMemo(() => preview || defaultImage || '', [
+    preview,
+    defaultImage,
+  ])
+
   return (
     <Container>
       <label htmlFor="image">
-        <ImagePreview preview={isClear ? '' : preview}>
-          {isClear && (
+        <ImagePreview preview={getPreview}>
+          {!defaultImage && isClear && (
             <div>
               <img src={imagePlaceholder} alt="" />
             </div>

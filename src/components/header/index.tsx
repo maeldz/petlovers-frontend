@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Logo, Menu } from '..'
+import { Logo } from './logo'
+import { Menu } from './menu'
 import { useAuth } from '../../contexts/auth'
 import { Container } from './styles'
 
@@ -14,8 +15,16 @@ export const Header: React.FC<Props> = ({ signed }) => {
   const { user } = useAuth()
 
   const handleMenuExpanded = (): void => {
+    const body = document.querySelector('body') as HTMLBodyElement
+    body.style.overflow = !menuExpanded ? 'hidden' : 'initial'
+
     setMenuExpanded(!menuExpanded)
   }
+
+  useEffect(() => {
+    const body = document.querySelector('body') as HTMLBodyElement
+    body.style.overflow = 'initial'
+  }, [])
 
   return (
     <Container>

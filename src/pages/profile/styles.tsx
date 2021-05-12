@@ -6,7 +6,11 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 84px;
+  padding: 84px;
+
+  @media (max-width: 489px) {
+    padding: 34px;
+  }
 
   form {
     display: flex;
@@ -14,9 +18,16 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 571px;
     border-radius: 6px;
-    margin-right: 63px;
     background: #fff;
     box-shadow: 0px 1px 8px #00000024;
+
+    @media (max-width: 739px) {
+      width: 100%;
+    }
+
+    @media (max-width: 489px) {
+      //padding: 0 30px;
+    }
 
     div.header {
       display: flex;
@@ -47,6 +58,10 @@ export const Content = styled.div`
         height: 43px;
         border-radius: 6px;
         padding: 0 11px;
+
+        @media (max-width: 489px) {
+          width: 100%;
+        }
       }
     }
 
@@ -55,6 +70,12 @@ export const Content = styled.div`
       justify-content: center;
       margin: 38px 0 22px;
 
+      @media (max-width: 489px) {
+        width: 100%;
+        margin: 0 0 22px;
+        padding: 0 35px;
+      }
+
       button {
         width: 214px;
         height: 42px;
@@ -62,6 +83,10 @@ export const Content = styled.div`
         background: #f2ac05;
         color: #fff;
         transition: background 0.2s;
+
+        @media (max-width: 489px) {
+          width: 100%;
+        }
 
         &:hover {
           background: #d99a04;

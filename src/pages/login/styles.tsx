@@ -9,8 +9,23 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-  height: calc(100% - 73px);
   padding: 115px 90px 0;
+
+  @media (max-width: 1000px) {
+    padding: 90px 70px 0;
+  }
+
+  @media (max-width: 635px) {
+    padding: 70px 50px 0;
+  }
+
+  @media (max-width: 500px) {
+    padding: 50px 30px 0;
+  }
+
+  @media (max-width: 425px) {
+    padding: 32px;
+  }
 
   form {
     display: flex;
@@ -20,22 +35,94 @@ export const Content = styled.div`
     border-radius: 8px;
     background: #fff;
 
+    @media (max-width: 1000px) {
+      max-width: 350px;
+      padding: 50px 28px;
+    }
+
+    @media (max-width: 635px) {
+      max-width: 300px;
+      padding: 30px 23px;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 250px;
+      padding: 20px 17px;
+    }
+
+    @media (max-width: 425px) {
+      max-width: 100%;
+      padding: 30px 17px;
+    }
+
     strong {
       font-size: 23px;
       margin-bottom: 19px;
       font-weight: 500;
       color: #909090;
+
+      @media (max-width: 1000px) {
+        font-size: 21px;
+        margin-bottom: 17px;
+      }
+
+      @media (max-width: 635px) {
+        font-size: 19px;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 500px) {
+        font-size: 17px;
+        margin-bottom: 13px;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 20px;
+        margin-bottom: 17px;
+      }
     }
 
     input {
       margin-bottom: 15px;
-      padding-left: 19px;
+      padding: 0 19px;
       border-radius: 6px;
       height: 46px;
       font-size: 18px;
       font-weight: 500;
       background: #f9f4e8;
       color: #ca8e00;
+
+      @media (max-width: 1000px) {
+        margin-bottom: 13px;
+        padding: 0 17px;
+        border-radius: 6px;
+        height: 43px;
+        font-size: 16px;
+      }
+
+      @media (max-width: 635px) {
+        margin-bottom: 11px;
+        padding: 0 15px;
+        border-radius: 5px;
+        height: 40px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 500px) {
+        margin-bottom: 9px;
+        padding: 0 13px;
+        border-radius: 4px;
+        height: 37px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 425px) {
+        margin-bottom: 12px;
+        padding: 0 13px;
+        border-radius: 5px;
+        height: 47px;
+        font-size: 17px;
+      }
 
       &::placeholder {
         color: #ca8e00;
@@ -52,6 +139,34 @@ export const Content = styled.div`
       font-weight: 600;
       color: #fff;
       transition: background 0.2s;
+
+      @media (max-width: 1000px) {
+        height: 51px;
+        border-radius: 26px;
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 635px) {
+        height: 46px;
+        border-radius: 24px;
+        font-size: 14px;
+        margin-bottom: 27px;
+      }
+
+      @media (max-width: 500px) {
+        height: 41px;
+        border-radius: 22px;
+        font-size: 12px;
+        margin-bottom: 24px;
+      }
+
+      @media (max-width: 500px) {
+        height: 46px;
+        border-radius: 22px;
+        font-size: 17px;
+        margin-bottom: 30px;
+      }
 
       &:hover {
         background: #d99a04;
