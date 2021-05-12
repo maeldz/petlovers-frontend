@@ -23,10 +23,6 @@ Aplicação web do projeto Petlovers.
 
 ##### `yarn dev`
 
-Inicia o servidor em modo de produção (faça um `build` antes)
-
-##### `yarn dev`
-
 Inicia o servidor em modo de desenvolvimento
 
 ##### `yarn build`
